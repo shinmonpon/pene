@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biglietto Attivo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="fixed-header">
+    <i class="fas fa-chevron-left back-arrow"></i> 
+    <span class="header-title">Ticket attivo</span>
+  </div>
+
+  <div class="scroll-view">
+    <div class="card">
+
+      <img src="asf-logo.png" alt="ASF Logo" class="asf-logo">
+      <span class="main-title">MENSILE AREA URBANA COMO T. B/U</span>
+      
+      <div>
+        <div class="clickable-header" id="infoTesseraButton" role="button" aria-expanded="false" aria-controls="userInfoDetailsDropdown">
+          <div class="icon-text-container">
+            <img src="tessera.png" alt="Icona Tessera">
+            <span>Informazioni tessera</span>
+          </div>
+          <img src="arrow-down.png" alt="Espandi" class="chevron-img" id="infoTesseraChevron">
+        </div>
+        <div id="userInfoDetailsDropdown" class="collapsible-content">
+          <div class="user-info-layout">
+              <img src="profile-pic.png" alt="Profile Picture" class="profile-pic-placeholder">
+              <div class="user-text-details">
+                  <div class="name">Yusuf Ali</div>
+                  <div class="tax-id">ALIYSF90A01H501M</div>
+                  <div class="user-card-detail-item">
+                      <span class="label">Card no.</span>
+                      <span class="value">7392/3859</span>
+                  </div>
+                  <div class="user-card-detail-item">
+                      <span class="label">Expiry date:</span>
+                      <span class="value">01/01/2029</span>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="validation-loop-wrapper"> 
+        <div class="clickable-header" id="validationHeaderButton" role="button" aria-expanded="true" aria-controls="validationContentArea">
+            <div class="icon-text-container">
+              <img src="validazione.png" alt="Icona Validazione">
+              <span>Controllo e validazione</span>
+            </div>
+            <img src="arrow-down.png" alt="Comprimi" class="chevron-img open-chevron" id="validationChevron">
+        </div>
+        <div id="validationContentArea" class="collapsible-content open-content" style="max-height: none;">
+            <img src="qr-code.png" class="qr-code-small" alt="QR Code" id="smallQrImage">
+            <button class="text-button-link underline" id="enlargeQrButton">Ingrandisci QRCode</button> 
+            <div class="time-code-row">
+              <div class="icon-text">
+                <img src="clock.png" alt="Icona Orologio"> 
+                <span id="clock">--:--:--</span>
+              </div>
+              <div class="icon-text">
+                <img src="lock.png" alt="Icona Lucchetto"> 
+                <span>968</span>
+              </div>
+            </div>
+        </div> 
+        
+        <div class="loop-image-container"> 
+          <div class="loop-scrolling-image">
+            <img src="image.png" alt="Animated Zigzag Pattern 1">
+            <img src="image.png" alt="Animated Zigzag Pattern 2">
+            <img src="image.png" alt="Animated Zigzag Pattern 3">
+          </div>
+        </div>
+      </div>
+      
+      <div class="validity-banner"> 
+        <span>Valido dal <strong>02/05/2025</strong> al <strong>31/05/2025</strong></span> 
+      </div>
+      <!-- Added class to target "Emesso il" -->
+      <div class="detail-item emesso-il"> 
+        <span class="label">Emesso il:</span> 
+        <span class="value">02/05/2025 - 13:32</span> 
+      </div>
+      <div class="detail-item row-layout"> 
+        <!-- Added class to target "Costo" label -->
+        <span class="label costo-label">Costo</span> 
+        <span class="price-value">48,00 €</span> 
+      </div>
+      
+      <!-- Separator re-added here -->
+      <hr class="separator">
+
+      <div class="detail-item row-layout"> 
+        <span class="label">Dettagli</span> 
+        <a href="#" class="link-value" id="leggiTuttoLink" aria-expanded="false" aria-controls="dettagliContent">
+            <span id="leggiTuttoText">Leggi tutto</span> 
+            <img src="arrow-down.png" alt="Espandi Dettagli" class="chevron-img" id="leggiTuttoChevron">
+        </a> 
+      </div>
+      <div id="dettagliContent" class="collapsible-content">
+        <p>ASF Autolinee Srl</p>
+        <p>P.IVA 02660190139</p>
+      </div>
+      
+      <div class="detail-item row-layout"> 
+        <span class="label light">Codice Ticket:</span> 
+        <span class="value light-value">10130/98360</span> 
+      </div>
+      <div class="detail-item row-layout"> 
+        <span class="label light">Note:</span> 
+        <span class="value light-value">Emissione TPLW</span> 
+      </div>
+    </div>
+  </div>
+
+  <div id="qrModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal-btn" id="closeQrBtn">×</span>
+      <img src="" alt="QR Code Ingrandito" id="enlargedQrImage" class="qr-modal-image">
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
